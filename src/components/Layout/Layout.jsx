@@ -5,7 +5,7 @@ import Header from "../shared/Header";
 
 const Layout = () => {
     return (
-        <div>
+        <div className="px-[5%]">
             <Header/>
             <Outlet/>
             <Footer/>
