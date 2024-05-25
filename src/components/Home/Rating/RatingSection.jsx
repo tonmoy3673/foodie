@@ -11,7 +11,7 @@ const RatingNReviewSection = () => {
       <div className="lg:w-[87.95%] md:w-full mx-auto">
         <div className="w-full xl:w-[980px] mx-auto bg-white rating-box">
           <div className="p-6 rounded-[8px]">
-            <h2 className="text-[12px] md:text-lg lg:text-2xl lg:leading-[36px] mb-3">
+            <h2 className="text-[12px] md:text-lg lg:text-2xl lg:leading-[36px] mb-3 font-semibold">
               Ratings
             </h2>
             <div className="md:flex justify-between gap-5">
@@ -119,12 +119,6 @@ const RatingNReviewSection = () => {
           <Achievement />
         </div>
       </div>
-      {/* <div className="hidden lg:block w-full">
-        <Brand />
-      </div> */}
-      {/* <div className="mt-8">
-        <BrandSwiper />
-      </div> */}
     </div>
   );
 };
