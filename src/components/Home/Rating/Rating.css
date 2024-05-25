@@ -1,0 +1,17 @@
+.rating-box {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.my-class {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.brand__para {
+  color: #414141;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
