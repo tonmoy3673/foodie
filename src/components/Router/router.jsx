@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
+import Dashboard from "../Dashboard/Dashboard";
 import Home from "../Home/Home";
 import Layout from "../Layout/Layout";
 import About from "../Pages/About";
 import Feedback from "../Pages/Feedback";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRoute from "./PrivateRoute";
 
 export const router=createBrowserRouter([
     {
@@ -36,5 +38,9 @@ export const router=createBrowserRouter([
                 element:<Register/>
             }
         ]
+    },
+    {
+        path:'/dashboard',
+        element:<PrivateRoute><Dashboard/></PrivateRoute>
     }
 ])

@@ -59,7 +59,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit(handleLogin)}>
 
                     
-                    <div className="form-control w-full max-w-xs text-white">
+                    <div className="form-control w-full max-w-xs text-black">
                         <label className="label">
                             <span className="label-text text-xl font-semibold text-white">Email</span>
                             
@@ -68,7 +68,7 @@ const Login = () => {
                         {errors.email && <p role="alert" className='text-red-400'>{errors.email?.message}</p>}
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs text-black ">
                         <label className="label">
                             <span className="label-text text-xl font-semibold text-white">Password</span>
                             
@@ -86,14 +86,14 @@ const Login = () => {
                     </div>
                     
                    
-                    <input type="submit" className='btn w-full font-semibold' value='Login' />
+                    <input type="submit" className='btn w-full font-semibold hover:bg-warning bg-[#880769] text-white' value='Login' />
                     <div>
                         {loginError && <p className='text-red-600'>{loginError}</p>}
                     </div>
                 </form>
-                <p className='py-2'>New to foodie? <Link to='/register' className='text-lime-700 underline'>Create an account</Link></p>
+                <p className='py-2'>New to foodie? <Link to='/register' className='text-blue-500 underline'>Create an account</Link></p>
                 <div className="divider text-xl font-semibold">OR</div>
-                <button onClick={handleSignInWithGoogle} className='btn btn-outline w-full text-white'>Login With Google</button>
+                <button onClick={handleSignInWithGoogle} className='btn w-full hover:bg-warning bg-[#880769] text-white'>Login With Google</button>
             </div>
         </div>
     );

@@ -13,11 +13,9 @@ const Banner = () => {
               Bite with Our Exquisite Recipes. We pride ourselves on delivering
               food and unparalleled customer satisfaction.
             </p>
-            <div className="flex justify-center !cursor-pointer">
-              <button className="flex items-center rounded-md z-40 btn__shadow bg-warning py-4 px-8 mt-8 cursor-pointer">
-                <span className="text-dark text-base font-bold mr-3">
+            <div className="flex justify-center">
+              <button className="rounded-md z-40 hover:bg-warning bg-[#880769] text-white py-4 px-8 mt-8 my-btn">
                   Get an Estimate
-                </span>
               </button>
             </div>
           </div>

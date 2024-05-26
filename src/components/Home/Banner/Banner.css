@@ -35,3 +35,9 @@
   position: relative;
   z-index: 1;
 }
+.my-btn {
+  cursor: pointer;
+}
+.my-btn:hover {
+  background-color: #880769;
+}

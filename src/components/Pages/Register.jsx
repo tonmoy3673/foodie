@@ -1,5 +1,4 @@
 
-
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -17,6 +16,7 @@ const Register = () => {
         createUser(data.email, data.password)
         .then(result =>{
             const user=result.user;
+            console.log(user);
             
             
             const userInfo={
@@ -36,10 +36,7 @@ const Register = () => {
         .catch(error=>{
             console.log(error)
             setSignUpError(error.message)
-        });
-
-        
-        
+        });   
 
     }
     const saveUser=(name,email)=>{
@@ -49,15 +46,6 @@ const Register = () => {
             navigate(from,{replace:true});
 
         }
-        
-        // const getToken = email =>{
-        //     console.log(email);
-        //     fetch(`https://car-dealer-server-lovat.vercel.app/jwt?email=${email}`)
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         localStorage.setItem('Access-token', data.accessToken)
-        //     })
-        // }
 
 
     
@@ -67,7 +55,7 @@ const Register = () => {
             <div className='w-96 p-10 bg-[#880769] rounded'>
                 <h2 className='text-2xl font-bold text-center mb-4 text-white'>Please Sign Up Here!</h2>
                 <form onSubmit={handleSubmit(handleSignup)}>
-                <div className="form-control w-full max-w-xs">
+                <div className="form-control w-full max-w-xs text-black">
                         <label className="label">
                             <span className="label-text text-xl font-semibold text-white">Name</span>
                             
@@ -78,7 +66,7 @@ const Register = () => {
                         {errors.name && <p role='alert' className='text-red-400'>{errors?.name?.message}</p>}
                     </div>
                     
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs text-black">
                         <label className="label">
                             <span className="label-text text-xl font-semibold text-white">Email</span>
                             
@@ -90,7 +78,7 @@ const Register = () => {
                         
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs text-black">
                         <label className="label">
                             <span className="label-text text-xl font-semibold text-white">Password</span>
                             
@@ -108,13 +96,13 @@ const Register = () => {
                     
                    
                    <div className='py-4'>
-                   <input type="submit" className='btn w-full' value='sing Up'/>
+                   <input type="submit" className='btn w-full hover:bg-warning bg-[#880769] text-white' value='Sign Up'/>
                    </div>
                 </form>
                 <div>
                     {signUpError && <p className='text-red-600'>{signUpError}</p>}
                 </div>
-                <p className='py-2'>Already have an account <Link to='/login' className='text-lime-700 underline'>Please Login</Link></p>
+                <p className='py-2 text-white'>Already have an account <Link to='/login' className=' underline text-blue-500'>Please Login</Link></p>
                 
             </div>
         </div>
