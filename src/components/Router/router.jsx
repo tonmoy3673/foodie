@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../Dashboard/DashboardLayout";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
 import Layout from "../Layout/Layout";
 import About from "../Pages/About";
@@ -13,6 +14,7 @@ export const router=createBrowserRouter([
     {
         path:'/',
         element:<Layout/>,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 path:'/',
@@ -50,6 +52,7 @@ export const router=createBrowserRouter([
     {
         path:'/dashboard',
         element:<PrivateRoute><DashboardLayout/></PrivateRoute>,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 
