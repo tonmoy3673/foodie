@@ -1,6 +1,4 @@
 
-
-import Achievement from "../Achievements/Achievement";
 import Rating from "./Rating";
 import "./Rating.css";
 import RatingProgressBar from "./RatingProgressBar";
@@ -115,9 +113,7 @@ const RatingNReviewSection = () => {
             </p>
           </div>
         </div>
-        <div className="md:mt-[25px] mt-[10px]">
-          <Achievement />
-        </div>
+        
       </div>
     </div>
   );

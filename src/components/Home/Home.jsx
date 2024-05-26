@@ -1,3 +1,5 @@
+import { useLoaderData } from "react-router-dom";
+import Foods from "../Pages/Foods/Foods";
 import BrandSwiper from "./BandSwiper/BandSwiper";
 import Banner from "./Banner/Banner";
 import Mission from "./Mission";
@@ -6,6 +8,8 @@ import Services from "./Services";
 
 
 const Home = () => {
+    const data=useLoaderData();
+    
     return (
         <div>
            <section>
@@ -13,6 +17,10 @@ const Home = () => {
            </section>
            <section>
             <RatingNReviewSection/>
+           </section>
+           {/* ======== Products======== */}
+           <section>
+            <Foods data={data}/>
            </section>
            <section>
            <Services/>
