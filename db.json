@@ -1,0 +1,44 @@
+{
+  "foods": [
+    {
+      "id": "1",
+      "title": "Takoyaki",
+      "brand": "Japanese",
+      "price": "260",
+      "description": "Takoyaki is believed to have originated in Osaka, Japan, in the 1930s. It has since become a popular street food across Japan, commonly found at festivals and street stalls, known as yatai.",
+      "image_url": "https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "2",
+      "title": "Sushi",
+      "brand": "Japanese",
+      "price": 480,
+      "description": "Sushi is a Japanese dish consisting of vinegared rice (shari) combined with various ingredients (neta), such as seafood, vegetables, and sometimes tropical fruits. Sushi is typically prepared with raw seafood, but it can also include cooked or marinated fish.",
+      "image_url": "https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "3",
+      "title": "Pho",
+      "brand": "Vietnamese",
+      "price": 1075,
+      "description": "Pho is a Vietnamese soup consisting of broth, rice noodles (bánh phở), herbs, and meat, typically beef (phở bò) or chicken (phở gà). It's a popular street food in Vietnam and has gained popularity worldwide.",
+      "image_url": "https://images.pexels.com/photos/958546/pexels-photo-958546.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "4",
+      "title": "Spaghetti Carbonara",
+      "brand": "Italian pasta",
+      "price": 360,
+      "description": "Spaghetti Carbonara is a classic Italian pasta dish made with eggs, hard cheese, pancetta, and pepper. The dish originates from Rome and has a creamy texture without the use of cream.",
+      "image_url": "https://images.pexels.com/photos/209540/pexels-photo-209540.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "5",
+      "title": "Biryani",
+      "brand": "Bangladeshi",
+      "price": 455,
+      "description": "Biryani is a mixed rice dish originating from the Indian subcontinent. It is made with Indian spices, rice, and typically includes meat (such as chicken, beef, goat, pork, lamb, prawn, or fish), or in some varieties, eggs or vegetables.",
+      "image_url": "https://images.pexels.com/photos/6260921/pexels-photo-6260921.jpeg?auto=compress&cs=tinysrgb&w=600"
+    }
+  ]
+}
