@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
@@ -40,8 +41,8 @@ const Foods = ({ data }) => {
         allowTouchMove={false}
       >
         {data?.map(({ title, image_url, price, id }) => (
-          <SwiperSlide key={id} className={`text-center py-4 lg:py-10 `}>
-            <div className="card card-compact w-60 lg:w-96 bg-base-100 shadow-xl">
+          <SwiperSlide key={id} className={`text-center !ps-32 !md:ps-0  py-4 lg:py-10 `}>
+            <div className="card card-compact w-60 lg:w-72 xl:w-96 bg-base-100 shadow-xl">
               <figure>
                 <img
                   src={image_url}
@@ -52,7 +53,9 @@ const Foods = ({ data }) => {
                 <h2 className="text-base md:text-xl text-center text-[#880769] font-semibold">{title}</h2>
                 <p className="font-semibold text-red-600 text-base lg:text-lg">Price : {price}$</p>
                 <div className="card-actions justify-center mt-2">
-                  <button className="btn hover:bg-warning bg-[#880769] text-white">Buy Now</button>
+                  <button className="btn hover:bg-warning bg-[#880769] text-white">
+                    <Link to={`/foods/${id}`}>Details</Link>
+                  </button>
                 </div>
               </div>
             </div>
