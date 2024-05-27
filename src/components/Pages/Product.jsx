@@ -13,7 +13,7 @@ const Product = (product) => {
                   alt="Shoes"
                 />
               </figure>
-              <div className="card-body text-center">
+              <div className="card-body bg-base-200 text-center">
                 <h2 className="text-base md:text-xl text-[#880769] font-semibold">{title}</h2>
                 <p className="font-semibold text-red-600 text-base lg:text-lg">Price : {price}$</p>
                 <div className="card-actions justify-center mt-2">
