@@ -39,6 +39,30 @@
       "price": 455,
       "description": "Biryani is a mixed rice dish originating from the Indian subcontinent. It is made with Indian spices, rice, and typically includes meat (such as chicken, beef, goat, pork, lamb, prawn, or fish), or in some varieties, eggs or vegetables.",
       "image_url": "https://images.pexels.com/photos/6260921/pexels-photo-6260921.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "6",
+      "title": "Burger",
+      "brand": "Nesle",
+      "description": "Very Testy Burger",
+      "image_url": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": "500"
+    },
+    {
+      "id": "7",
+      "title": "Burger",
+      "brand": "Nesle",
+      "description": "This is vey testy burger",
+      "image_url": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": "700"
+    },
+    {
+      "id": "8",
+      "title": "Burger",
+      "brand": "Nesle",
+      "description": "This is vey testy burger",
+      "image_url": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": "700"
     }
   ]
 }
