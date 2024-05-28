@@ -1,22 +1,41 @@
-import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 
 const Product = ({product, setProducts,products} ) => {
     const {image_url,title,price,id}=product;
     
-      const handleDelete=async(id)=>{
-        await fetch(`http://localhost:3000/foods/${id}`,{
-          method:"DELETE"
-        })
-        .then((res)=>res.json())
-        .then((data)=>{
-          console.log(data);
-        setProducts(products.filter((product)=>product.id !==id))
-        toast.error('Food has been Deleted Successfully!!')
-        })
-        
-      }
+    const handleDelete = async (id) => {
+      Swal.fire({
+        title: 'Do you want to delete?',
+        showCancelButton: true,
+        confirmButtonText: 'Delete',
+        customClass: {
+          actions: 'my-actions',
+          cancelButton: 'order-1 right-gap',
+          confirmButton: 'order-2',
+          denyButton: 'order-3',
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:3000/foods/${id}`, {
+            method: "DELETE",
+          })
+            .then((res) => {
+              return res.json();
+            })
+            .then((data) => {
+              console.log(data);
+              setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
+              Swal.fire('Food has been Deleted Successfully!', '', 'success');
+            })
+            .catch((error) => {
+              console.error('There was a problem with the fetch operation:', error);
+              Swal.fire('Failed to delete the food.', '', 'error');
+            });
+        }
+      });
+    };
     return (
         <div>
             <div className="card card-compact h-[220px] lg:h-[350px] w-48 lg:w-72 bg-base-100 shadow-xl">

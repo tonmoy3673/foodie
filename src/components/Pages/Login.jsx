@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 
 import { GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
+import { FaGithub, FaGoogle } from 'react-icons/fa6';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 
@@ -52,14 +53,14 @@ const Login = () => {
         }
 
     return (
-        <div className='py-6 lg:py-16 md:flex gap-20  items-center '>
+        <div className='py-6 lg:py-16 mb-5 md:flex gap-20  items-center '>
             <div>
                 <img src='/src/assets/images/login.jpg' className='w-[300px] lg:w-[600px]'>
                 </img>
             </div>
 
-            <div className='w-96 p-10 bg-[#880769] rounded text-white'>
-                <h2 className='text-2xl font-bold text-center mb-4'>Please Login Here!</h2>
+            <div className='w-96 p-10 bg-[#a01b81] rounded text-white'>
+                <h2 className='text-2xl font-bold text-center mb-5'>Please Login Here!</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
 
                     
@@ -97,7 +98,8 @@ const Login = () => {
                 </form>
                 <p className='py-2'>New to foodie? <Link to='/register' className='text-blue-500 underline'>Create an account</Link></p>
                 <div className="divider text-xl font-semibold">OR</div>
-                <button onClick={handleSignInWithGoogle} className='btn w-full hover:bg-warning bg-[#880769] text-white'>Login With Google</button>
+                <button onClick={handleSignInWithGoogle} className='btn w-full hover:bg-warning bg-[#880769] text-white'><FaGoogle className='text-base'/> Login With Google</button>
+                <button  className='btn w-full hover:bg-warning bg-[#880769] text-white mt-2 md:mt-4'><FaGithub className='text-lg'/> Login With GitHub</button>
             </div>
 
         </div>

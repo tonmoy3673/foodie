@@ -74,7 +74,7 @@ const RatingNReviewSection = () => {
               </div>
               <p className="block md:hidden text-[7px] font-medium leading-[12px] text-[#666666] mt-[15px]">
                 *Reviews imported from Google have not been individually
-                verified by HomeAdvisor.
+                verified by Food Advisor.
               </p>
               <div className="block md:hidden">
                 <div>
@@ -109,7 +109,7 @@ const RatingNReviewSection = () => {
             </div>
             <p className="md:block hidden text-[12px] font-medium leading-[16px] text-[#666666] mt-[15px]">
               *Reviews imported from Google have not been individually verified
-              by HomeAdvisor.
+              by Food Advisor.
             </p>
           </div>
         </div>
