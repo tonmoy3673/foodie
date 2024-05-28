@@ -13,7 +13,7 @@ const DashboardLayout = () => {
             <Link to="/dashboard/all-products">All Products</Link>
           </button>
           <button className="bg-[#880769] hover:bg-warning rounded-md mb-6 p-4 text-white w-full">
-            <Link to={"add-products"}>Add Product</Link>
+            <Link to="/dashboard/add-products">Add Product</Link>
           </button>
           <button className="bg-[#880769] hover:bg-warning rounded-md p-4 text-white w-full">
             <Link to="/" >Home</Link>

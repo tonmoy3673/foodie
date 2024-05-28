@@ -4,7 +4,8 @@ import Home from "../Home/Home";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Layout from "../Layout/Layout";
 import About from "../Pages/About";
-import AllProducts from "../Pages/AllProducts";
+import AddProducts from "../Pages/Dashboard/AddProducts";
+import AllProducts from "../Pages/Dashboard/AllProducts";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Feedback from "../Pages/Feedback";
 import FoodDetails from "../Pages/Foods/FoodDetails";
@@ -63,7 +64,11 @@ export const router=createBrowserRouter([
             {
                 path:'/dashboard/all-products',
                 element:<PrivateRoute><AllProducts/></PrivateRoute>
-            }
+            },
+            {
+                path:'/dashboard/add-products',
+                element:<PrivateRoute><AddProducts/></PrivateRoute>
+            },
         ]
     }
 ])
