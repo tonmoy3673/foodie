@@ -2,8 +2,8 @@
 
 const Mission = () => {
     return (
-        <div className="md:flex py-8 lg:py-16 gap-6 lg:gap-16 ">
-      <div>
+        <div className="lg:flex py-8 lg:py-16 gap-6 lg:gap-16 ">
+      <div className="mb-6 lg:mb-0">
         <h2 className="text-lg lg:text-3xl 2xl:text-[36px] font-semibold text-[#880769] text-center md:text-start">Our Mission</h2>
         <p className=" mt-[15px] text-base lg:leading-[170%]">Our mission is simple: to bring the joy of cooking and eating to everyone, whether you are a seasoned chef or a kitchen novice. We strive to provide you with delicious recipes, helpful tips, and the latest food trends to elevate your culinary skills and make every meal a memorable one.</p>
         <p className="text-base lg:leading-[170%] mt-[8px]">
@@ -12,7 +12,7 @@ const Mission = () => {
         </p>
       </div>
      
-      <img src="/src/assets/images/Project Cover1.jpg" className="w-[500px]"/>
+      <img src="/src/assets/images/Project Cover1.jpg" className="w-[500px] mx-auto lg:mx-0"/>
       
     </div>
     );
