@@ -22,12 +22,11 @@ const breakpoints = {
  
 };
 const Foods = ({ data }) => {
-  console.log(data);
+ 
   return (
     <div className="pt-6 md:pt-10">
       <Swiper
         spaceBetween={21}
-        // slidesPerView={3}
         modules={[Autoplay, Navigation]}
         breakpoints={breakpoints}
         loop={true}

@@ -2,7 +2,9 @@ import { useLoaderData } from "react-router-dom";
 
 const FoodDetails = () => {
   const food = useLoaderData();
-  const { title, brand, price, description, image_url } = food;
+
+  const { title, brand, price, description, image_url} = food;
+
 
   console.log(food);
   return (
@@ -47,6 +49,7 @@ const FoodDetails = () => {
             className="mask mask-star-2 bg-orange-400"
           />
         </div>
+       
       </div>
     </div>
   );
