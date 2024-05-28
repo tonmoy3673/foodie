@@ -51,9 +51,13 @@ const Login = () => {
             .catch(error=>console.error(error))
         }
 
-    
     return (
-        <div className='h-[800px] flex justify-center items-center bg-[]'>
+        <div className='py-6 lg:py-16 md:flex gap-20  items-center '>
+            <div>
+                <img src='/src/assets/images/login.jpg' className='w-[300px] lg:w-[600px]'>
+                </img>
+            </div>
+
             <div className='w-96 p-10 bg-[#880769] rounded text-white'>
                 <h2 className='text-2xl font-bold text-center mb-4'>Please Login Here!</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
@@ -95,6 +99,7 @@ const Login = () => {
                 <div className="divider text-xl font-semibold">OR</div>
                 <button onClick={handleSignInWithGoogle} className='btn w-full hover:bg-warning bg-[#880769] text-white'>Login With Google</button>
             </div>
+
         </div>
     );
 };

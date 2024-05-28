@@ -12,8 +12,9 @@ const Layout = () => {
       <div className="px-[5%]">
         <Header />
         <Outlet />
-        <Footer />
+        
       </div>
+      <Footer />
     </div>
   );
 };
