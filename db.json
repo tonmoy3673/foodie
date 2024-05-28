@@ -25,12 +25,20 @@
       "image_url": "https://images.pexels.com/photos/209540/pexels-photo-209540.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "9",
-      "title": "Burger",
-      "brand": "Nesle",
-      "description": "3t3wfwef",
+      "id": "4",
+      "title": "Paella",
+      "brand": "Spanish",
+      "description": "Paella is a traditional Spanish rice dish originating from the region of Valencia. It is known for its vibrant yellow color, which comes from saffron, and its rich combination of ingredients.",
       "image_url": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "price": "5332"
+      "price": "300"
+    },
+    {
+      "id": "5",
+      "title": "Chole Bhature",
+      "brand": "Indian",
+      "description": "Chole Bhature is a combination of two dishes: spicy chickpeas (Chole) and deep-fried bread (Bhature). It's a staple in Punjabi cuisine and is loved for its rich flavors and satisfying nature.",
+      "image_url": "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": "600"
     }
   ]
 }

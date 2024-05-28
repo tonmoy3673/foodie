@@ -11,7 +11,6 @@ const AllProducts = () => {
         .then((res)=>res.json())
         .then((data)=>{setProducts(data)})
     },[setLoading]);
-
     return (
         <div>
             <h2 className="text-center pb-4 md:pb-8 text-xl lg:text-3xl text-[#880769] font-semibold">All Foods Items</h2>

@@ -41,7 +41,7 @@ const Foods = ({ data }) => {
       >
         {data?.map(({ title, image_url, price, id }) => (
           <SwiperSlide key={id} className={`text-center !ps-32 !md:ps-0  py-4 lg:py-10 `}>
-            <div className="card card-compact w-60 lg:w-72 xl:w-96 bg-base-100 shadow-xl">
+            <div className="card card-compact  h-[220px] lg:h-[400px] w-48 lg:w-96 bg-base-100 shadow-xl">
               <figure>
                 <img
                   src={image_url}
