@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 
@@ -28,6 +29,7 @@ const Product = ({product, setProducts,products} ) => {
               console.log(data);
               setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
               Swal.fire('Food has been Deleted Successfully!', '', 'success');
+              toast.success('Food Item removed Successfully!!')
             })
             .catch((error) => {
               console.error('There was a problem with the fetch operation:', error);

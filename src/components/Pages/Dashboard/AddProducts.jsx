@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import { FaLocationArrow } from "react-icons/fa6";
-
+import Swal from 'sweetalert2';
 
 const AddProducts = () => {
   const handleSubmit=async(e)=>{
@@ -14,19 +14,37 @@ const AddProducts = () => {
   const image_url=form.photo.value;
  const data={title,brand,description,image_url, id,price};
  console.log(data);
-    await fetch("http://localhost:3000/foods",{
-      method:"POST",
-      headers:{
-        "Content-type":"application/json"
-      },
-      body:JSON.stringify(data)
-      
-    })
-    .then((res)=>res.json())
-    .then((data)=>console.log("fetch data :",data))
-    form.reset();
-    toast.success('New Food Added Successfully!!')
-    
+ Swal.fire({
+  title: "Are you sure to add this item?",
+  showDenyButton: true,
+  confirmButtonText: "Save",
+  denyButtonText: `Don't save`
+}).then((result)=>{
+  if (result.isConfirmed) {
+      fetch("http://localhost:3000/foods", {
+        method:"POST",
+        headers:{
+          "Content-type":"application/json"
+        },
+        body:JSON.stringify(data)
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data);
+          
+          Swal.fire("Saved!", "", "success");
+          form.reset();
+          toast.success('New Food Added Successfully!!')
+        })
+        .catch((error) => {
+          console.error('There was a problem with the fetch operation:', error);
+          Swal.fire("Changes are not saved", "", "info");
+        });
+    }
+})
+  
 
   };
     return (

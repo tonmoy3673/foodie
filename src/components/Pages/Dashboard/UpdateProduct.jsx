@@ -1,9 +1,9 @@
 
-
 import { useState } from "react";
+import toast from 'react-hot-toast';
 import { FaLocationArrow } from "react-icons/fa6";
 import { useLoaderData } from "react-router-dom";
-
+import Swal from 'sweetalert2';
 
 const UpdateProduct = () => {
     const foods=useLoaderData();
@@ -27,17 +27,36 @@ const UpdateProduct = () => {
   const image_url=form.photo.value;
  const data={title,brand,description,image_url, id,price};
  console.log(data);
-    await fetch(`http://localhost:3000/foods/${foods.id}`,
-        {
-            method:"PATCH",
-            headers:{
-                "Content-type":"application/json",
-            },
-            body:JSON.stringify(data),
-
+ Swal.fire({
+    title: "Do you want to save the changes?",
+    showDenyButton: true,
+    confirmButtonText: "Save",
+    denyButtonText: `Don't save`
+  }).then((result)=>{
+    if (result.isConfirmed) {
+        fetch(`http://localhost:3000/foods/${foods.id}`, {
+          method: "PATCH",
+          headers:{
+            "Content-type":"application/json",
+        },
+        body:JSON.stringify(data),
         })
-        .then((res)=>res.json())
-        .then((data)=>console.log(data))
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            
+            Swal.fire("Saved!", "", "success");
+            toast.success('Info has been Updated!!')
+          })
+          .catch((error) => {
+            console.error('There was a problem with the fetch operation:', error);
+            Swal.fire("Changes are not saved", "", "info");
+          });
+      }
+  })
+    
 
   };
     return (

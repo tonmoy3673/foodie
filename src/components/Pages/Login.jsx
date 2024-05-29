@@ -23,6 +23,7 @@ const Login = () => {
         signIn(data.email, data.password)
         .then(result=>{
             const user=result.user;
+            console.log(user);
 
             toast.success('Login Successfully!!')
             navigate(from,{replace:true});
@@ -42,6 +43,7 @@ const Login = () => {
             logInWithGoogle(googleProvider)
             .then((result)=>{
                 const user=result.user;
+                console.log(user);
             toast.success('Google Login Successfully!!')
             navigate(from,{replace:true});
                 
