@@ -7,6 +7,7 @@ import About from "../Pages/About";
 import AddProducts from "../Pages/Dashboard/AddProducts";
 import AllProducts from "../Pages/Dashboard/AllProducts";
 import Dashboard from "../Pages/Dashboard/Dashboard";
+import UpdateProduct from "../Pages/Dashboard/UpdateProduct";
 import Feedback from "../Pages/Feedback";
 import FoodDetails from "../Pages/Foods/FoodDetails";
 import Login from "../Pages/Login";
@@ -68,6 +69,11 @@ export const router=createBrowserRouter([
             {
                 path:'/dashboard/add-products',
                 element:<PrivateRoute><AddProducts/></PrivateRoute>
+            },
+            {
+                path:'/dashboard/update-product/:id',
+                element:<PrivateRoute><UpdateProduct/></PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:3000/foods/${params.id}`)
             },
         ]
     }

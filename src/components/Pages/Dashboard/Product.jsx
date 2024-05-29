@@ -58,9 +58,11 @@ const Product = ({product, setProducts,products} ) => {
                   <button onClick={()=> handleDelete(id)} className="btn hover:bg-warning bg-red-600 text-white">
                    Delete 
                   </button>
+                  <Link to={`/dashboard/update-product/${id}`}>
                   <button className="btn hover:bg-warning bg-green-600 text-white">
                    Update 
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>
