@@ -7,7 +7,7 @@ const AddProducts = () => {
   e.preventDefault();
   const form=e.target;
   const id=form.id.value;
-  const title=form.name.value;
+  const title=form.title.value;
   const price=form.price.value;
   const brand=form.brand.value;
   const description=form.description.value;
@@ -43,14 +43,14 @@ const AddProducts = () => {
                     <div>
                       {" "}
                       <h5 className="mb-2 text-[#880769] text-base">Food name *</h5>
-                      <label className="sr-only" htmlFor="name">
-                        name
+                      <label className="sr-only" htmlFor="title">
+                        title
                       </label>
                       <input
                         className="w-full rounded-lg bg-[#C477B126] shadow-sm shadow-black p-3 lg:pr-16 pr-3 text-sm" // Added pr-12 class for padding-right
                         placeholder="Type Food Name"
                         type="text"
-                        id="name"
+                        id="title"
                       />
                     </div>
 
