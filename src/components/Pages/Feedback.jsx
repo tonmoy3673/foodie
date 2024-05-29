@@ -2,12 +2,14 @@
 import { FaLocationArrow } from "react-icons/fa6";
 const Feedback = () => {
     return (
-        <div>
-           <h2>This is Feedback Page</h2> 
+        <div className="py-6 lg:py-10 mb-5 md:mb-10 md:flex gap-20  items-center" >
            <div>
-           <div className=" lg:col-span-6 md:col-span-4 md:order-1  lg:py-30 md:flex items-center 5xl:ml-[285px] 4xl:ml-[200px] 3xl:ml-[150px] 2xl:ml-[100px] xl:ml-[80px] lg:ml-[40px] md:ml-[20px]  ">
-            <div className="rounded-lg  lg:col-span-3 items-center">
-              <h2 className="lg:mb-8 mb-5 text-lg lg:text-2xl 2xl:text-[32px] text-[#880769] font-semibold text-center">
+                <img src='/src/assets/images/feedback.jpg' className='w-[300px] lg:w-[500px] mx-auto md:mx-0'>
+                </img>
+            </div>
+           <div>       
+            <div className="rounded-lg  items-center">
+              <h2 className="lg:mb-10 mb-5 text-lg lg:text-3xl 2xl:text-[32px] text-[#880769] font-semibold text-center">
                 {" "}
                 Give Us Feedback{" "}
               </h2>
@@ -94,7 +96,7 @@ const Feedback = () => {
                 </div>
               </form>
             </div>
-          </div>
+          
            </div>
         </div>
     );

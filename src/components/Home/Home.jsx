@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Feedback from "../Pages/Feedback";
 import Foods from "../Pages/Foods/Foods";
 import BrandSwiper from "./BandSwiper/BandSwiper";
 import Banner from "./Banner/Banner";
@@ -27,6 +28,9 @@ const Home = () => {
            </section>
            <section>
             <Mission/>
+           </section>
+           <section>
+            <Feedback/>
            </section>
            <section>
             <BrandSwiper/>

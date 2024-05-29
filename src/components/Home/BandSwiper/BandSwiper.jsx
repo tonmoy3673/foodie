@@ -24,7 +24,7 @@ const breakpoints = {
 
 const BrandSwiper = () => {
   return (
-    <div className="py-12">
+    <div className="py-6 md:py-10 mb-6 md:mb-12">
       <Swiper
         spaceBetween={13}
         modules={[Autoplay]}
