@@ -2,7 +2,7 @@
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
 import { FaGithub, FaGoogle } from 'react-icons/fa6';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { AuthContext } from '../Context/AuthProvider';
 
 const Login = () => {
     const { register, handleSubmit,formState: { errors } } = useForm();
-    const {signIn,logInWithGoogle}=useContext(AuthContext);
+    const {signIn,logInWithGoogle,signInWithGithub}=useContext(AuthContext);
     const [loginError,setLoginError]=useState('');
     const location =useLocation();
     const navigate = useNavigate ();
@@ -18,11 +18,8 @@ const Login = () => {
     const from=location.state?.from?.pathname || '/';
 
     
-    const handleLogin=data=>{
-
-        
-
-        setLoginError('');
+    const handleLogin=data=>{ 
+            setLoginError('');
         signIn(data.email, data.password)
         .then(result=>{
             const user=result.user;
@@ -45,11 +42,25 @@ const Login = () => {
             logInWithGoogle(googleProvider)
             .then((result)=>{
                 const user=result.user;
-            toast.success('Login Successfully!!')
+            toast.success('Google Login Successfully!!')
             navigate(from,{replace:true});
                 
             })
             .catch(error=>console.error(error))
+        }
+
+        const githubProvider=new GithubAuthProvider();
+        const handleGitHub=()=>{
+            signInWithGithub (githubProvider)
+            .then(result=>{
+                const user=result.user;
+            toast.success('GitHub Login Successfully!!')
+            navigate(from,{replace:true});
+                console.log(user);
+            })
+            .catch(error=>{
+                console.log(error);
+            })
         }
 
     return (
@@ -99,7 +110,7 @@ const Login = () => {
                 <p className='py-2'>New to foodie? <Link to='/register' className='text-blue-500 underline'>Create an account</Link></p>
                 <div className="divider text-xl font-semibold">OR</div>
                 <button onClick={handleSignInWithGoogle} className='btn w-full hover:bg-warning bg-[#880769] text-white'><FaGoogle className='text-base'/> Login With Google</button>
-                <button  className='btn w-full hover:bg-warning bg-[#880769] text-white mt-2 md:mt-4'><FaGithub className='text-lg'/> Login With GitHub</button>
+                <button  onClick={handleGitHub} className='btn w-full hover:bg-warning bg-[#880769] text-white mt-2 md:mt-4'><FaGithub className='text-lg'/> Login With GitHub</button>
             </div>
 
         </div>

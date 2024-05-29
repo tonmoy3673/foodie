@@ -34,7 +34,7 @@ const Footer = () => {
                   <div className=" mt-3 mr-8">
                     <h4 className="lg:text-xl text-base">Open Hours:</h4>
                     <p className="my-1 mt-3">
-                    Monday-Friday 9:00am-11:30pm
+                    Sunday-Friday 9:00am-11:30pm
                     </p>
                   </div>
                   </div>

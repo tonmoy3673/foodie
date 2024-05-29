@@ -56,7 +56,7 @@ const UpperNavbar = () => {
               className="w-[16px] h-[17px]"
             />
             <span className="text-[10px] xl:text-base text-white">
-            Monday-Friday 9:00am-11:30pm
+            Sunday-Friday 9:00am-11:30pm
             </span>
           </div>
         </div>
