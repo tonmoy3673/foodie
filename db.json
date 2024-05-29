@@ -39,14 +39,6 @@
       "description": "Chole Bhature is a combination of two dishes: spicy chickpeas (Chole) and deep-fried bread (Bhature). It's a staple in Punjabi cuisine and is loved for its rich flavors and satisfying nature.",
       "image_url": "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600",
       "price": "600"
-    },
-    {
-      "id": "101",
-      "title": "Orange",
-      "brand": "Spanish",
-      "description": "This is food text",
-      "image_url": "https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "price": "123"
     }
   ]
 }

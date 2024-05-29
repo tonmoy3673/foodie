@@ -30,10 +30,10 @@ const Home = () => {
             <Mission/>
            </section>
            <section>
-            <Feedback/>
+            <BrandSwiper/>
            </section>
            <section>
-            <BrandSwiper/>
+            <Feedback/>
            </section>
         </div>
     );

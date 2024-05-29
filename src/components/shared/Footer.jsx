@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./footer.css";
 const Footer = () => {
   return (
-    <footer className="mt-10 md:mt-20">
+    <footer className="mt-10 md:mt-24">
       <div className=" footer__bg bg-blend-multiply  lg:px-[35px] xs:px-[20px] !text-white relative  bg-black">
         {/* company logo */}
         <div className=" absolute lg:-top-20 -top-10 left-1/2 lg:-ml-[90px] -ml-[50px] lg:w-auto lg:h-auto w-[100px] h-[100px]  ">

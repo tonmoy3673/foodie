@@ -42,7 +42,7 @@ const Register = () => {
     const saveUser=(name,email)=>{
         const user={name,email};
         console.log(user);
-        toast.success('Login Successfully!!')
+        toast.success('Account Created Successfully!!')
             navigate(from,{replace:true});
 
         }
