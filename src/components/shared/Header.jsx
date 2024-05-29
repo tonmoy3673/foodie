@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { FaRegUser } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
 
@@ -25,12 +26,12 @@ const Header = () => {
           </h2>
         </div>
         <div className="md:hidden">
-        <div className="w-10 rounded-full mr-8">
-                  <img
-                    className="rounded-full cursor-pointer"
-                    alt="User Avatar"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  />
+          <div className="w-10 rounded-full mr-8">
+            <img
+              className="rounded-full cursor-pointer"
+              alt="User Avatar"
+              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+            />
           </div>
           <button
             onClick={mobileMenu}
@@ -95,11 +96,12 @@ const Header = () => {
                   Log Out
                 </button>
                 <div className="w-10 rounded-full ml-8 hidden md:block">
-                  <img
+                  {/* <img
                     className="rounded-full cursor-pointer"
                     alt="User Avatar"
                     src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  />
+                  /> */}
+                  <FaRegUser className="text-xl md:text-2xl mt-1"/>
                 </div>
               </>
             ) : (
@@ -123,10 +125,12 @@ const Header = () => {
           </div>
         </div>
 
-{/* Mobile menu */}
+        {/* Mobile menu */}
         <div
           className={`${
-            isOpen ? "absolute block top-24 z-50 w-full bg-black text-white" : "hidden"
+            isOpen
+              ? "absolute block top-24 z-50 w-full bg-black text-white"
+              : "hidden"
           }  md:hidden`}
         >
           <div className="flex flex-col md:flex-row space-x-0 md:space-x-4">
@@ -168,11 +172,12 @@ const Header = () => {
                   Log Out
                 </button>
                 <div className="w-10 rounded-full ml-8 hidden md:block">
-                  <img
+                  {/* <img
                     className="rounded-full cursor-pointer"
                     alt="User Avatar"
                     src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  />
+                  /> */}
+                  <FaRegUser className="text-xl md:text-2xl mt-1" />
                 </div>
               </>
             ) : (
