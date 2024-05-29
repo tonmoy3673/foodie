@@ -69,7 +69,7 @@ const AddProducts = () => {
                         placeholder="Type Food Name"
                         type="text"
                         id="title"
-                      />
+                      required/>
                     </div>
 
                     <div>
@@ -82,7 +82,7 @@ const AddProducts = () => {
                         placeholder="Type Price $"
                         type="number"
                         id="price"
-                      />
+                        required/>
                     </div>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ const AddProducts = () => {
                       placeholder="Type Brand Name "
                       type="text"
                       id="brand"
-                    />
+                      required/>
                   </div>
 
                   <div>
@@ -111,7 +111,7 @@ const AddProducts = () => {
                       placeholder="Input Photo URL"
                       type="text"
                       id="photo"
-                    />
+                    required/>
                   </div>
                 </div>
 
@@ -127,7 +127,7 @@ const AddProducts = () => {
                     rows="6"
                     type="text"
                     id="description"
-                  ></textarea>
+                  required></textarea>
                 </div>
                 <div>
                     <h5 className="mb-2 text-[#880769] text-base">ID *</h5>
@@ -139,7 +139,7 @@ const AddProducts = () => {
                       placeholder="Type Product ID "
                       type="text"
                       id="id"
-                    />
+                    required/>
                   </div>
                </div>
 
