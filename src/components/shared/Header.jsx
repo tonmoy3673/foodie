@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { FaRegUser } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
 
@@ -28,20 +29,20 @@ const Header = () => {
           
         </div>
         <div className="md:hidden">
-        <div className="w-10 rounded-full mr-3 block md:hidden">
-                  <img
-                    className="rounded-full cursor-pointer"
-                    alt="User Avatar"
-                    src={user?.photoURL}
-                  />
-                  
-                </div>
-        
+          {
+            user?.photoURL?
+            <div className="w-10 rounded-full mr-3">
+            <img
+              className="rounded-full cursor-pointer"
+              alt="User Avatar"
+              src={user.photoURL}
+            />
+          </div>:<FaRegUser className="mr-3"/>
+          }
           <button
             onClick={mobileMenu}
             className="text-white focus:outline-none"
           >
-            
             {/* Icon for mobile menu */}
             <svg
               className="w-6 h-6"
@@ -134,7 +135,7 @@ const Header = () => {
         <div
           className={`${
             isOpen
-              ? "absolute block top-24 z-50 w-full bg-black text-white"
+              ? "absolute block left-0 top-20 z-50 w-full bg-black text-white"
               : "hidden"
           }  md:hidden`}
         >
