@@ -28,11 +28,20 @@ const Header = () => {
           
         </div>
         <div className="md:hidden">
+        <div className="w-10 rounded-full mr-3 block md:hidden">
+                  <img
+                    className="rounded-full cursor-pointer"
+                    alt="User Avatar"
+                    src={user?.photoURL}
+                  />
+                  
+                </div>
         
           <button
             onClick={mobileMenu}
             className="text-white focus:outline-none"
           >
+            
             {/* Icon for mobile menu */}
             <svg
               className="w-6 h-6"
@@ -167,14 +176,7 @@ const Header = () => {
                 >
                   Log Out
                 </button>
-                <div className="w-10 rounded-full ml-8 hidden md:block">
-                  <img
-                    className="rounded-full cursor-pointer"
-                    alt="User Avatar"
-                    src={user?.photoURL}
-                  />
-                  
-                </div>
+                
               </>
             ) : (
               <>
