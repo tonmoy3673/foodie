@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import { FaRegUser } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
 
@@ -21,18 +20,15 @@ const Header = () => {
     <div>
       <div className="navbar bg-base-100 py-6 relative">
         <div className="flex-1">
-          <h2 className="text-4xl cursor-pointer font-bold text-[#880769] hover:text-warning">
-            <Link to="/">Foodie</Link>
-          </h2>
+          
+            <Link to="/">
+            <h2 className="text-4xl cursor-pointer font-bold text-[#880769] hover:text-warning font-mono">Foodie</h2>
+         
+            </Link>
+          
         </div>
         <div className="md:hidden">
-          <div className="w-10 rounded-full mr-8">
-            <img
-              className="rounded-full cursor-pointer"
-              alt="User Avatar"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            />
-          </div>
+        
           <button
             onClick={mobileMenu}
             className="text-white focus:outline-none"
@@ -91,17 +87,17 @@ const Header = () => {
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="hover:bg-warning py-2 px-4 rounded-xl font-semibold bg-[#880769] text-white"
+                  className="hover:bg-warning py-1 px-4 rounded-xl font-semibold bg-[#880769] text-white"
                 >
                   Log Out
                 </button>
                 <div className="w-10 rounded-full ml-8 hidden md:block">
-                  {/* <img
+                  <img
                     className="rounded-full cursor-pointer"
                     alt="User Avatar"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  /> */}
-                  <FaRegUser className="text-xl md:text-2xl mt-1"/>
+                    src={user?.photoURL}
+                  />
+                  
                 </div>
               </>
             ) : (
@@ -172,12 +168,12 @@ const Header = () => {
                   Log Out
                 </button>
                 <div className="w-10 rounded-full ml-8 hidden md:block">
-                  {/* <img
+                  <img
                     className="rounded-full cursor-pointer"
                     alt="User Avatar"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  /> */}
-                  <FaRegUser className="text-xl md:text-2xl mt-1" />
+                    src={user?.photoURL}
+                  />
+                  
                 </div>
               </>
             ) : (

@@ -6,26 +6,29 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 const Register = () => {
     const {register,handleSubmit,formState: { errors }}=useForm();
-    const {createUser,updateUser} =useContext(AuthContext);
+    const {createUser,updateUser, setLoading} =useContext(AuthContext);
     const [signUpError,setSignUpError]=useState('')
     const navigate=useNavigate();
     const from=location.state?.from?.pathname || '/';
 
     const handleSignup=data=>{
+       
         setSignUpError('');
         createUser(data.email, data.password)
         .then(result =>{
+            setLoading(true)
             const user=result.user;
             console.log(user);
             
             
             const userInfo={
-                displayName:(data.name)
+                displayName:data.name,
+                photoURL:data.photoURL
             }
             updateUser(userInfo)
             .then(()=>{
                 
-                saveUser(data.name,data.email);
+                saveUser(data.name,data.email,data.photoURL);
             })
             .catch(err=>{
                 console.log(err)
@@ -39,9 +42,10 @@ const Register = () => {
         });   
 
     }
-    const saveUser=(name,email)=>{
-        const user={name,email};
+    const saveUser=(name,email,photoURL)=>{
+        const user={name,email,photoURL};
         console.log(user);
+        setLoading(false)
         toast.success('Account Created Successfully!!')
             navigate(from,{replace:true});
 
@@ -61,7 +65,7 @@ const Register = () => {
                 <form onSubmit={handleSubmit(handleSignup)}>
                 <div className="form-control w-full max-w-xs text-black">
                         <label className="label">
-                            <span className="label-text text-xl font-semibold text-white">Name</span>
+                            <span className="label-text text-xl font-semibold text-white">Name *</span>
                             
                         </label>
                         <input type="text" {...register("name",{
@@ -72,7 +76,7 @@ const Register = () => {
                     
                     <div className="form-control w-full max-w-xs text-black">
                         <label className="label">
-                            <span className="label-text text-xl font-semibold text-white">Email</span>
+                            <span className="label-text text-xl font-semibold text-white">Email *</span>
                             
                         </label>
                         <input {...register("email",{
@@ -84,7 +88,7 @@ const Register = () => {
 
                     <div className="form-control w-full max-w-xs text-black">
                         <label className="label">
-                            <span className="label-text text-xl font-semibold text-white">Password</span>
+                            <span className="label-text text-xl font-semibold text-white">Password *</span>
                             
                         </label>
                         <input type="password" 
@@ -95,6 +99,18 @@ const Register = () => {
                         })} placeholder="Type Password"
                         className="input input-bordered w-full max-w-xs" />
                         {errors.password && <p role='alert' className='text-red-600'>{errors.password?.message}</p>}
+                        
+                    </div>
+
+                    <div className="form-control w-full max-w-xs text-black">
+                        <label className="label">
+                            <span className="label-text text-xl font-semibold text-white">Image URL *</span>
+                            
+                        </label>
+                        <input {...register("photoURL",{
+                            required:"Image URL is required"
+                        })} placeholder='Your Image URL' type="text"  className="input input-bordered w-full max-w-xs"/>
+                        {errors.photoURL && <p role='alert' className='text-red-600'>{errors.photoURL?.message}</p>}
                         
                     </div>
                     
