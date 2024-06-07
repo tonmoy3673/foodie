@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 
 
 const Product = ({product, setProducts,products} ) => {
-    const {image_url,title,price,id}=product;
+    const {image_url,title,price,_id}=product;
     
     const handleDelete = async (id) => {
       Swal.fire({
@@ -19,7 +20,7 @@ const Product = ({product, setProducts,products} ) => {
         },
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:3000/foods/${id}`, {
+          fetch(`http://localhost:5000/foods/${_id}`, {
             method: "DELETE",
           })
             .then((res) => {
@@ -27,7 +28,7 @@ const Product = ({product, setProducts,products} ) => {
             })
             .then((data) => {
               console.log(data);
-              setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
+              setProducts((prevProducts) => prevProducts.filter((product) => product._id !== id));
               Swal.fire('Food has been Deleted Successfully!', '', 'success');
               toast.success('Food Item removed Successfully!!')
             })
@@ -52,15 +53,15 @@ const Product = ({product, setProducts,products} ) => {
                 <h2 className="text-base md:text-xl text-[#880769] font-semibold">{title}</h2>
                 <p className="font-semibold text-red-600 text-base lg:text-lg">Price : {price}$</p>
                 <div className="card-actions justify-center mt-2">
-                  <Link to={`/foods/${id}`}>
+                  <Link to={`/foods/${_id}`}>
                   <button className="btn hover:bg-warning bg-[#880769] text-white">
                    Details 
                   </button>
                   </Link>
-                  <button onClick={()=> handleDelete(id)} className="btn hover:bg-warning bg-red-600 text-white">
+                  <button onClick={()=> handleDelete(_id)} className="btn hover:bg-warning bg-red-600 text-white">
                    Delete 
                   </button>
-                  <Link to={`/dashboard/update-product/${id}`}>
+                  <Link to={`/dashboard/update-product/${_id}`}>
                   <button className="btn hover:bg-warning bg-green-600 text-white">
                    Update 
                   </button>

@@ -5,7 +5,6 @@ const FoodDetails = () => {
 
   const { title, brand, price, description, image_url} = food;
 
-
   console.log(food);
   return (
     <div className="card bg-base-100">

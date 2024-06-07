@@ -7,7 +7,7 @@ const AllProducts = () => {
     const [loading, setLoading] = useState(false)
     useEffect(()=>{
         setLoading(true)
-        fetch("http://localhost:3000/foods")
+        fetch("http://localhost:5000/foods")
         .then((res)=>res.json())
         .then((data)=>{setProducts(data)})
     },[setLoading]);

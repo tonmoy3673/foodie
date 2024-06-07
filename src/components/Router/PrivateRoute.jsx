@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
     return (
       <div className="d-flex mx-auto py-3 text-center">
         <p className="me-2">Loading...</p>{" "}
-        <progress className="progress w-56"></progress>
+        <progress className="progress w-56 mt-6 md:mt-10"></progress>
       </div>
     );
   }

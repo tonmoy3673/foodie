@@ -6,13 +6,12 @@ const AddProducts = () => {
   const handleSubmit=async(e)=>{
   e.preventDefault();
   const form=e.target;
-  const id=form.id.value;
   const title=form.title.value;
   const price=form.price.value;
   const brand=form.brand.value;
   const description=form.description.value;
   const image_url=form.photo.value;
- const data={title,brand,description,image_url, id,price};
+ const data={title,brand,description,image_url,price};
  console.log(data);
  Swal.fire({
   title: "Are you sure to add this item?",
@@ -21,7 +20,7 @@ const AddProducts = () => {
   denyButtonText: `Don't save`
 }).then((result)=>{
   if (result.isConfirmed) {
-      fetch("http://localhost:3000/foods", {
+      fetch("http://localhost:5000/foods", {
         method:"POST",
         headers:{
           "Content-type":"application/json"
@@ -50,7 +49,7 @@ const AddProducts = () => {
     return (
         <div>
             <h2 className="text-center pb-4 md:pb-8 text-xl lg:text-3xl text-[#880769] font-semibold">Add New Food Items</h2>
-            <div className=" lg:col-span-6 md:col-span-4 md:order-1  lg:py-30 md:flex items-center 5xl:ml-[285px] 4xl:ml-[200px] 3xl:ml-[150px] 2xl:ml-[100px] xl:ml-[80px] lg:ml-[40px] md:ml-[20px]  ">
+            <div className=" lg:col-span-6 md:col-span-4 md:order-1  lg:py-30 md:flex items-center 5xl:ml-[285px] 4xl:ml-[200px] 3xl:ml-[150px] 2xl:ml-[100px] xl:ml-[80px] lg:ml-[40px] md:ml-[20px]">
 
                 {/* =========== Form Part ======= */}
             <div className="rounded-lg items-center py-7 mx-auto">
@@ -114,10 +113,8 @@ const AddProducts = () => {
                     required/>
                   </div>
                 </div>
-
-               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:mb-8 mb-4 ">
-               <div >
-                  <label className="sr-only" htmlFor="Description">
+               <div className="lg:mb-8 mb-4 ">
+                <label className="sr-only" htmlFor="Description">
                   Description
                   </label>
                   <h5 className="mb-2 text-[#880769] text-base">Description *</h5>
@@ -128,8 +125,8 @@ const AddProducts = () => {
                     type="text"
                     id="description"
                   required></textarea>
-                </div>
-                <div>
+               
+                {/* <div>
                     <h5 className="mb-2 text-[#880769] text-base">ID *</h5>
                     <label className="sr-only" htmlFor="id">
                       ID
@@ -140,7 +137,7 @@ const AddProducts = () => {
                       type="text"
                       id="id"
                     required/>
-                  </div>
+                  </div> */}
                </div>
 
                 <div className=" flex md:block xs:justify-center xs:items-center xs:mx-auto">

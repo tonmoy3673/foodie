@@ -23,17 +23,17 @@ export const router=createBrowserRouter([
             {
                 path:'/',
                 element:<Home/>,
-                loader:()=> fetch("http://localhost:3000/foods")             
+                loader:()=> fetch("http://localhost:5000/foods")             
             },
             {
                 path:'/home',
                 element:<Home/>,
-                loader:()=> fetch("http://localhost:3000/foods")
+                loader:()=> fetch("http://localhost:5000/foods")
             },
             {
                 path:'/foods/:id',
                 element:<FoodDetails/>,
-                loader:({params})=>fetch(`http://localhost:3000/foods/${params.id}`)
+                loader:({params})=>fetch(`http://localhost:5000/foods/${params.id}`)
             },
             {
                 path:'/about',
@@ -73,7 +73,7 @@ export const router=createBrowserRouter([
             {
                 path:'/dashboard/update-product/:id',
                 element:<PrivateRoute><UpdateProduct/></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:3000/foods/${params.id}`)
+                loader:({params})=>fetch(`http://localhost:5000/foods/${params.id}`)
             },
         ]
     }

@@ -8,7 +8,6 @@ import Swal from 'sweetalert2';
 const UpdateProduct = () => {
     const foods=useLoaderData();
     const [title,setTitle]=useState(foods.title);
-    const [id,setId]=useState(foods.id);
     const [price,setPrice]=useState(foods.price);
     const [brand,setBrand]=useState(foods.brand);
     const [description,setDescription]=useState(foods.description);
@@ -19,13 +18,12 @@ const UpdateProduct = () => {
   const handleSubmit=async(e)=>{
   e.preventDefault();
   const form=e.target;
-  const id=form.id.value;
   const title=form.title.value;
   const price=form.price.value;
   const brand=form.brand.value;
   const description=form.description.value;
   const image_url=form.photo.value;
- const data={title,brand,description,image_url, id,price};
+ const data={title,brand,description,image_url,price};
  console.log(data);
  Swal.fire({
     title: "Do you want to save the changes?",
@@ -34,7 +32,7 @@ const UpdateProduct = () => {
     denyButtonText: `Don't save`
   }).then((result)=>{
     if (result.isConfirmed) {
-        fetch(`http://localhost:3000/foods/${foods.id}`, {
+        fetch(`http://localhost:5000/foods/${foods._id}`, {
           method: "PATCH",
           headers:{
             "Content-type":"application/json",
@@ -151,20 +149,7 @@ const UpdateProduct = () => {
                     onChange={(e)=>setDescription(e.target.value)}
                   ></textarea>
                 </div>
-                <div>
-                    <h5 className="mb-2 text-[#880769] text-base">ID *</h5>
-                    <label className="sr-only" htmlFor="id">
-                      ID
-                    </label>
-                    <input
-                      className="w-full rounded-lg bg-[#C477B126] shadow-sm shadow-black p-3 lg:pr-16 pr-3  text-sm"
-                      placeholder="Type Product ID "
-                      type="text"
-                      id="id"
-                      value={id}
-                      onChange={(e)=>setId(e.target.value)}
-                    />
-                  </div>
+               
                </div>
 
                 <div className=" flex md:block xs:justify-center xs:items-center xs:mx-auto">

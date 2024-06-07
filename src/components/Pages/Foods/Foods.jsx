@@ -37,9 +37,9 @@ const Foods = ({ data }) => {
         speed={3000}
         allowTouchMove={false}
       >
-        {data?.map(({ title, image_url, price, id }) => (
+        {data?.map(({ title, image_url, price, _id }) => (
           <SwiperSlide
-            key={id}
+            key={_id}
             className={`text-center !ps-32 !md:ps-0  py-4 lg:py-10 `}
           >
             <div className="card card-compact  h-[260px] md:h-[320px] lg:h-[400px] w-60 lg:w-96 bg-base-100 shadow-xl">
@@ -54,7 +54,7 @@ const Foods = ({ data }) => {
                   Price : {price}$
                 </p>
                 <div className="card-actions justify-center mt-2">
-                  <Link to={`/foods/${id}`}>
+                  <Link to={`/foods/${_id}`}>
                     <button className="btn hover:bg-warning bg-[#880769] text-white">
                       Details
                     </button>{" "}
