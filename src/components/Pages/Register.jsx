@@ -51,12 +51,12 @@ const Register = () => {
     
 
     return (
-        <div className='py-6 lg:py-10 mb-4 lg:mb-16 md:flex gap-20  items-center'>
+        <div className='py-6 lg:py-10 mb-4 lg:mb-16 md:flex  md:gap-20  items-center'>
             <div>
                 <img src='/src/assets/images/register.jpg' className='w-[300px] lg:w-[600px] mx-auto md:mx-0'>
                 </img>
             </div>
-            <div className='w-96 p-10 bg-[#880769] rounded mx-auto md:mx-0'>
+            <div className='md:w-96 p-4 md:p-10 bg-[#880769] rounded mx-auto md:mx-0'>
                 <h2 className='text-2xl font-bold text-center mb-4 text-white'>Please Sign Up Here!</h2>
                 <form onSubmit={handleSubmit(handleSignup)}>
                 <div className="form-control w-full max-w-xs text-black">

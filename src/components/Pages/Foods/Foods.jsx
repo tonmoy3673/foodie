@@ -22,9 +22,9 @@ const breakpoints = {
 };
 const Foods = ({ data }) => {
   return (
-    <div className="pt-6 md:pt-10">
+    <div className="pt-6 md:pt-10 mx-auto md:mx-0">
       <Swiper
-        spaceBetween={17}
+        spaceBetween={10}
         modules={[Autoplay, Navigation]}
         breakpoints={breakpoints}
         loop={true}
@@ -40,7 +40,7 @@ const Foods = ({ data }) => {
         {data?.map(({ title, image_url, price, _id }) => (
           <SwiperSlide
             key={_id}
-            className={`text-center !ps-32 !md:ps-0  py-4 lg:py-10 `}
+            className={`text-center !ps-20 !md:ps-0  py-4 lg:py-10 `}
           >
             <div className="card card-compact  h-[260px] md:h-[320px] lg:h-[400px] w-60 lg:w-96 bg-base-100 shadow-xl">
               <figure>

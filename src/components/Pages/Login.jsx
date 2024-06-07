@@ -65,13 +65,13 @@ const Login = () => {
         }
 
     return (
-        <div className='py-6 lg:py-16 mb-5 md:flex gap-20  items-center '>
+        <div className='py-6 lg:py-16 mb-5 md:flex md:gap-20  items-center '>
             <div>
                 <img src='/src/assets/images/login.jpg' className='w-[300px] lg:w-[600px] mx-auto md:mx-0'>
                 </img>
             </div>
 
-            <div className='w-96 p-10 bg-[#a01b81] rounded text-white mx-auto md:mx-0'>
+            <div className='md:w-96 p-10 bg-[#a01b81] rounded text-white mx-auto md:mx-0'>
                 <h2 className='text-2xl font-bold text-center mb-5'>Please Login Here!</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
 

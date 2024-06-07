@@ -22,11 +22,11 @@ const Footer = () => {
               
                 <div className="md:flex gap-10 text-center justify-evenly items-center">
                  
-                  <div className="mr-10">
+                  <div className="md:mr-10">
                     <h4 className=" lg:text-[25px] text-[20px]">
                       We Are Foodie Magnificence
                     </h4>
-                    <p className="text-white  pt-3 mb-2">
+                    <p className="text-white text-center pt-3 mb-2">
                       We work with a passion of taking challenges and creating
                       new ones in advertising sector.
                     </p>
